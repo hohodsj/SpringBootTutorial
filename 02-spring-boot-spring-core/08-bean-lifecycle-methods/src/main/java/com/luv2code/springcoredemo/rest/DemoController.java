@@ -6,33 +6,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.luv2code.springcoredemo.common.Coach;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
 public class DemoController {
     // define a private field for the dependency
     private Coach myCoach;
-    private Coach anotherCoach;
 
     @Autowired
     // Qualifier takes class name beside first letter is lower case
     public DemoController(
-        @Qualifier("cricketCoach") Coach theCoach,
-        @Qualifier("cricketCoach") Coach theOtherCoach) {
+        @Qualifier("cricketCoach") Coach theCoach) {
         System.out.println("In constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
-        anotherCoach = theOtherCoach;
     }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
-    }
-
-    @GetMapping("/check")
-    public String check() {
-        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
     
 }
