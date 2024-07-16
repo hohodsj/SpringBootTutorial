@@ -26,6 +26,9 @@ public class Student {
     @Column(name="email")
     private String email;
 
+    // @Column(name="added1")
+    // private String added1;
+
     // define constructors
     public Student() {}
 
