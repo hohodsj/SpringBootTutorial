@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thymeleaf Demo</title>
+    <!-- reference CSS file -->
+     <link rel="stylesheet" th:href="@{/css/demo.css}"/>
 </head>
 <body>
-
-    <h1>Hello World of Spring!</h1>
-    <br>
-    <br>
-    <p>Student name: <span th:text="${param.studentName}"></span></p>
+    <p th:text="'Time on the server is ' + ${theDate}" class="funny" ></p>
 </body>
 </html>
