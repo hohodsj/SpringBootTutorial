@@ -47,7 +47,7 @@ public class HelloWorldController {
 
     // need a controller method to read form data and
     // add data to the model
-    @RequestMapping("/processFormVersionThree")
+    @PostMapping("/processFormVersionThree")
     public String processFormVersionThree(@RequestParam("studentName") String theName, Model model) {
 
         // convert the data to all caps
