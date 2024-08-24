@@ -17,10 +17,17 @@
         First Name: <input type="text" th:field="*{firstName}" />
         <br><br>
         Last Name(*): <input type="text" th:field="*{lastName}" />
-
         <!-- Add error message if present -->
         <span th:if="${#fields.hasErrors('lastName')}"
                 th:error="*{lastName}"
+                class="error"></span>
+        <br><br>
+        <br><br>
+        Free passes: <input type="text" th:field="*{freePasses}"/>
+
+        <!-- Add error message if present -->
+        <span th:if="${#fields.hasErrors('freePasses')}"
+                th:error="*{freePasses}"
                 class="error"></span>
         <br><br>
         <input type="submit" value="Submit" />
